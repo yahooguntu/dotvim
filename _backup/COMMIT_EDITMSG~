@@ -1,0 +1,35 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	new file:   app/assets/javascripts/backup_locations.coffee
+#	new file:   app/assets/stylesheets/backup_locations.scss
+#	new file:   app/assets/stylesheets/scaffolds.scss
+#	new file:   app/controllers/backup_locations_controller.rb
+#	new file:   app/helpers/backup_locations_helper.rb
+#	new file:   app/models/backup_location.rb
+#	new file:   app/models/local_file.rb
+#	new file:   app/views/backup_locations/_form.html.erb
+#	new file:   app/views/backup_locations/edit.html.erb
+#	new file:   app/views/backup_locations/index.html.erb
+#	new file:   app/views/backup_locations/index.json.jbuilder
+#	new file:   app/views/backup_locations/new.html.erb
+#	new file:   app/views/backup_locations/show.json.jbuilder
+#	modified:   config/routes.rb
+#	new file:   db/migrate/20150210034557_create_backup_locations.rb
+#	new file:   db/migrate/20150210035113_add_info_to_backup_locations.rb
+#	new file:   db/migrate/20150210035726_create_local_files.rb
+#	new file:   db/migrate/20150210040206_add_status_to_local_file.rb
+#	new file:   db/schema.rb
+#	new file:   test/controllers/backup_locations_controller_test.rb
+#	new file:   test/fixtures/backup_locations.yml
+#	new file:   test/fixtures/local_files.yml
+#	new file:   test/models/backup_location_test.rb
+#	new file:   test/models/local_file_test.rb
+#

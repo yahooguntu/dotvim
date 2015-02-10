@@ -1,0 +1,44 @@
+//= require collab/desktop_add_ons
+//= require common/helpdesk-ui.translations
+//= require common/helpdesk-ui._bundle
+//= require collab/helpdesk-ui._bundle
+k
+$UI.app.module("HelpDesk.Collab", function (HelpDesk_Collab, App, Backbone, Marionette, $, _) {
+  var NS_HelpDesk_Common = App.module("HelpDesk.Common");
+
+  NS_HelpDesk_Common.source = NS_HelpDesk_Common.Constants.Source.Collab;
+
+  //DO NOT start with parent, because Marionette doesn't init modules in assigned order, but rather in reverse.
+  //This is not what we want, since submodules depend on parent modules.
+  HelpDesk_Collab.startWithParent = false;
+
+  App.addRegions({ helpDeskRegion: '.helpdesk-app' });
+
+  //Manually kick off modules so they're started in the correct order
+  App.on('start', function (options) {
+    NS_HelpDesk_Common.start(options);
+    HelpDesk_Collab.start(options);
+
+    //Shim our views into Common space
+    new HelpDesk_Collab.Controllers.ShimController(options);
+
+    //Establish Commands/Services, as well as import data from Window/Global space
+    new HelpDesk_Collab.Controllers.DataController(options);
+
+    //Start TemplateHelpersDataController before any Templates can be rendered
+    HelpDesk_Collab.templateHelpers = new HelpDesk_Collab.Controllers.TemplateHelpersDataController(options);
+
+    //Kick off the app!
+    new HelpDesk_Collab.Controllers.FrontController(options);
+
+    // Since we're starting this module AFTER the app start, BB.History has already done it's init work...
+    // Now we give it a quick kick to start the routing
+    Backbone.history.loadUrl( Backbone.history.fragment );
+  });
+
+  HelpDesk_Collab.addInitializer(function (options) {
+    this.router = new HelpDesk_Collab.Routers.AppRouter({
+      controller: new HelpDesk_Collab.Controllers.RouterController()
+    });
+  });
+});

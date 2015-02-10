@@ -1,0 +1,2 @@
+class BackupLocation < ActiveRecord::Base
+end

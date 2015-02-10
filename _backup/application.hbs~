@@ -1,0 +1,4 @@
+<h2 id="title">Ember.js</h2>
+{{#link-to 'about'}}About{{/link-to}}
+{{#link-to 'lists'}}Lists{{/link-to}}
+{{outlet}}

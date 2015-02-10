@@ -1,0 +1,6 @@
+These are our lists:
+{{outlet}}
+
+{{#each list in model}}
+  {{#link-to 'lists.list' list}}{{list.text}}{{/link-to}}
+{{/each}}

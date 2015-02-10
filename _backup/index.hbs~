@@ -1,0 +1,4 @@
+This is the index.
+{{#each list in model}}
+  {{#link-to 'lists.list' lists}}{{list.text}}{{/link-to}}
+{{/each}}
