@@ -1,1 +1,0 @@
-json.extract! @backup_location, :id, :created_at, :updated_at

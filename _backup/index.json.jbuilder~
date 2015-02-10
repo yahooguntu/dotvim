@@ -1,4 +1,0 @@
-json.array!(@backup_locations) do |backup_location|
-  json.extract! backup_location, :id, :path
-  json.url backup_location_url(backup_location, format: :json)
-end
