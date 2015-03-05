@@ -13,3 +13,6 @@
 [submodule "bundle/vim-bbye"]
 	path = bundle/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby

@@ -56,3 +56,18 @@ set backup
 set backupdir=~/.vim/_backup/,~/tmp,.
 set undofile
 set undodir=~/.vim/_undo/
+
+" autocomplete settings
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+" autocomplete remap to ctrl-space
+inoremap <c-@> <c-x><c-o>
+
+" map :er to autofill :e with the current path prefix
+cnoremap er edit <c-r>=expand("%:h")<cr>/
+
+" use 'Q' to apply the macro 'q'
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
