@@ -66,7 +66,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 inoremap <c-@> <c-x><c-o>
 
 " map :er to autofill :e with the current path prefix
-cnoremap er edit <c-r>=expand("%:h")<cr>/
+cnoremap ,e e <c-r>=expand("%:h")<cr>/
 
 " use 'Q' to apply the macro 'q'
 nnoremap Q @q
