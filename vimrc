@@ -18,7 +18,7 @@ set softtabstop=2
 set hidden
 
 " show line numbers
-set number
+set relativenumber
 
 " terminal title
 set title
@@ -71,3 +71,23 @@ cnoremap ,e e <c-r>=expand("%:h")<cr>/
 " use 'Q' to apply the macro 'q'
 nnoremap Q @q
 vnoremap Q :norm @q<cr>
+
+" toggle between absolute and relative line numbers
+function! NumberToggle()
+  if (&relativenumber == 1)
+    set number number?
+  else
+    set relativenumber relativenumber?
+  endif
+endfunc
+
+nnoremap <silent><leader>n :call NumberToggle()<cr>
+
+" hotkey to check all files for changes on disk
+function! CheckTimestampForReload()
+  let buf=bufnr('%')
+  exec ':bufdo :checktime'
+  exec ':buffer' buf
+endfunc
+
+nnoremap <silent><leader>r :call CheckTimestampForReload()<cr>
