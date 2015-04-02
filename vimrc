@@ -13,6 +13,7 @@ set nosmartindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set laststatus=2
 
 " hide buffers, don't close
 set hidden
@@ -31,7 +32,11 @@ set pastetoggle=<F2>
 
 set mouse=a
 
+
 " nerdtree configs
+
+" NERDTreeToggle leader mapping
+nnoremap <Leader>f :NERDTreeToggle<CR>
 
 " close vim if last tab is nerdtree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -39,7 +44,8 @@ set mouse=a
 " start with nerdtree open
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
+
 
 " alias bbye to \q
 nnoremap <Leader>q :Bdelete<CR>
