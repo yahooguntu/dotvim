@@ -36,7 +36,7 @@ set mouse=a
 " nerdtree configs
 
 " NERDTreeToggle leader mapping
-nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeToggle<CR>
 
 " close vim if last tab is nerdtree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -98,10 +98,14 @@ endfunc
 
 nnoremap <silent><leader>r :call CheckTimestampForReload()<cr>
 
-" ag shortcut for next/previous
+" ag shortcut for next/prev
 nnoremap <C-n> :cn<CR>
 nnoremap <C-p> :cp<CR>
 
-nnoremap gb :bn<CR>
-nnoremap gB :bp<CR>
+" next/prev buffer
+nnoremap <silent><leader>[ :bp<CR>
+nnoremap <silent><leader>] :bn<CR>
+
+" enable vim-airline buffer bar
 let g:airline#extensions#tabline#enabled = 1
+
