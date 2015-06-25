@@ -1,5 +1,7 @@
 set nocompatible
 
+set ttimeoutlen=50
+
 " load pathogen
 execute pathogen#infect()
 
