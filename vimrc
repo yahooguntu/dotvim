@@ -97,3 +97,11 @@ function! CheckTimestampForReload()
 endfunc
 
 nnoremap <silent><leader>r :call CheckTimestampForReload()<cr>
+
+" ag shortcut for next/previous
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
+
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
+let g:airline#extensions#tabline#enabled = 1
