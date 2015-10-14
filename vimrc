@@ -17,11 +17,17 @@ set shiftwidth=2
 set softtabstop=2
 set laststatus=2
 
+" allow backspacing over indent, lines, and start of insert
+set backspace=indent,eol,start
+
+" underline the cursor's current line
+"set cursorline
+
+" show tab complete menu for command line
+set wildmenu
+
 " hide buffers, don't close
 set hidden
-
-" show line numbers
-set relativenumber
 
 " terminal title
 set title
@@ -33,6 +39,15 @@ set undolevels=1000
 set pastetoggle=<F2>
 
 set mouse=a
+
+" search as characters are entered
+set incsearch
+" highlight search results
+set hlsearch
+" map key to unhighlight all results
+nnoremap <leader>n :nohlsearch<CR>
+
+
 
 
 " nerdtree configs
@@ -50,7 +65,7 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 
 
 " alias bbye to \q
-nnoremap <Leader>q :Bdelete<CR>
+nnoremap <leader>q :Bdelete<CR>
 
 " window navigation shortcuts
 map <C-h> <C-w>h
@@ -83,13 +98,18 @@ vnoremap Q :norm @q<cr>
 " toggle between absolute and relative line numbers
 function! NumberToggle()
   if (&relativenumber == 1)
-    set number number?
+    set norelativenumber
   else
-    set relativenumber relativenumber?
+    set relativenumber
   endif
 endfunc
 
-nnoremap <silent><leader>n :call NumberToggle()<cr>
+nnoremap <silent><leader>N :call NumberToggle()<cr>
+
+" show relative line numbers
+set relativenumber
+" line number for current line shows true line number
+set number
 
 " hotkey to check all files for changes on disk
 function! CheckTimestampForReload()
@@ -110,4 +130,9 @@ nnoremap <silent><leader>] :bn<CR>
 
 " enable vim-airline buffer bar
 let g:airline#extensions#tabline#enabled = 1
+
+" ruby syntax check
+autocmd FileType ruby nnoremap <silent><localleader>s :! ruby -cw %<CR>
+" js syntax check
+autocmd FileType javascript nnoremap <silent><localleader>s :! jshint --verbose %<CR>
 
