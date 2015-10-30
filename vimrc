@@ -47,7 +47,10 @@ set hlsearch
 " map key to unhighlight all results
 nnoremap <leader>n :nohlsearch<CR>
 
-
+" linux xterm color support
+if $TERM == 'xterm'
+  set t_Co=256
+endif
 
 
 " nerdtree configs
