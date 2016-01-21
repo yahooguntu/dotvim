@@ -40,6 +40,9 @@ set pastetoggle=<F2>
 
 set mouse=a
 
+" show intermediate commands as you type
+set showcmd
+
 " search as characters are entered
 set incsearch
 " highlight search results
