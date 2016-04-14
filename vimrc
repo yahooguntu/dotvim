@@ -57,6 +57,7 @@ endif
 
 
 " nerdtree configs
+let NERDTreeIgnore = ['\.wixobj$', '\.pyc$']
 
 " NERDTreeToggle leader mapping
 nnoremap <leader>f :NERDTreeToggle<CR>
