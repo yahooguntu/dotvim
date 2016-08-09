@@ -35,6 +35,9 @@ set title
 set history=1000
 set undolevels=1000
 
+" grey column to remind you to use short lines
+set colorcolumn=100
+
 " enter/exit paste mode
 set pastetoggle=<F2>
 
@@ -54,7 +57,6 @@ nnoremap <leader>n :nohlsearch<CR>
 if $TERM == 'xterm'
   set t_Co=256
 endif
-
 
 " nerdtree configs
 let NERDTreeIgnore = ['\.wixobj$', '\.pyc$']
@@ -117,6 +119,9 @@ nnoremap <silent><leader>N :call NumberToggle()<cr>
 set relativenumber
 " line number for current line shows true line number
 set number
+
+" don't jump to start of line when switching between buffers
+set nostartofline
 
 " hotkey to check all files for changes on disk
 function! CheckTimestampForReload()
