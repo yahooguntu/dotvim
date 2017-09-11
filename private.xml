@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+        <name>F19 to F19</name>
+        <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape)</appendix>
+        <identifier>private.f192f19_escape</identifier>
+        <autogen>
+            --KeyOverlaidModifier--
+            KeyCode::F19,
+            KeyCode::COMMAND_L,
+            ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+        </autogen>
+    </item>
+    <item>
+    	<name>Hyper-H to Left</name>
+    	<appendix>What it sounds like.</appendix>
+    	<identifier>dev.hyperh2leftarrow</identifier>
+    	<autogen>
+    		--KeyToKey--
+    		KeyCode::H, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    		KeyCode::CURSOR_LEFT
+    	</autogen>
+    </item>
+    <item>
+    	<name>Hyper-L to Right</name>
+    	<appendix>What it sounds like.</appendix>
+    	<identifier>dev.hyperl2rightarrow</identifier>
+    	<autogen>
+    		--KeyToKey--
+    		KeyCode::L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    		KeyCode::CURSOR_RIGHT
+    	</autogen>
+    </item>
+    <item>
+    	<name>Hyper-J to Down</name>
+    	<appendix>What it sounds like.</appendix>
+    	<identifier>dev.hyperh2downarrow</identifier>
+    	<autogen>
+    		--KeyToKey--
+    		KeyCode::J, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    		KeyCode::CURSOR_DOWN
+    	</autogen>
+    </item>
+    <item>
+    	<name>Hyper-K to Up</name>
+    	<appendix>What it sounds like.</appendix>
+    	<identifier>dev.hyperl2downarrow</identifier>
+    	<autogen>
+    		--KeyToKey--
+    		KeyCode::K, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    		KeyCode::CURSOR_UP
+    	</autogen>
+    </item>
+    <item>
+    	<name>Hyper-4 to End</name>
+    	<appendix>What it sounds like.</appendix>
+    	<identifier>dev.hyper42home</identifier>
+    	<autogen>
+    		--KeyToKey--
+    		KeyCode::KEY_4, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    		KeyCode::END
+    	</autogen>
+    </item>
+    <item>
+    	<name>Hyper-0 to Home</name>
+    	<appendix>What it sounds like.</appendix>
+    	<identifier>dev.hyper02end</identifier>
+    	<autogen>
+    		--KeyToKey--
+    		KeyCode::KEY_0, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    		KeyCode::HOME
+    	</autogen>
+    </item>
+    <item>
+        <name>Hyper-X to Delete</name>
+        <appendix>What it sounds like.</appendix>
+        <identifier>dev.hyperX2delete</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::X, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+            KeyCode::FORWARD_DELETE
+        </autogen>
+    </item>
+    <item>
+    		<name>Disable Sysdiagnose dot shortcut</name>
+    		<appendix>It takes ~2min to run and I keep pressing it accidentally.</appendix>
+    		<identifier>private.disable_sysdiagnose_dot_key</identifier>
+    		<autogen>
+    				--KeyToKey--
+    				KeyCode::DOT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    				KeyCode::VK_NONE
+    		</autogen>
+    </item>
+    <item>
+    		<name>Disable Sysdiagnose slash shortcut</name>
+    		<appendix>It takes ~2min to run and I keep pressing it accidentally.</appendix>
+    		<identifier>private.disable_sysdiagnose_slash_key</identifier>
+    		<autogen>
+    				--KeyToKey--
+    				KeyCode::SLASH, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L,
+    				KeyCode::VK_NONE
+    		</autogen>
+    </item>
+</root>

@@ -50,6 +50,11 @@ set showcmd
 set incsearch
 " highlight search results
 set hlsearch
+
+" use space as leader
+nnoremap <SPACE> <Nop>
+map <SPACE> <leader>
+
 " map key to unhighlight all results
 nnoremap <leader>n :nohlsearch<CR>
 
@@ -147,4 +152,5 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd FileType ruby nnoremap <silent><localleader>s :! ruby -cw %<CR>
 " js syntax check
 autocmd FileType javascript nnoremap <silent><localleader>s :! jshint --verbose %<CR>
-
+" auto-reload vim diff on buffer write
+autocmd BufWritePost * if &diff == 1 | diffupdate | endif
