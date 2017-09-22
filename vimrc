@@ -154,3 +154,7 @@ autocmd FileType ruby nnoremap <silent><localleader>s :! ruby -cw %<CR>
 autocmd FileType javascript nnoremap <silent><localleader>s :! jshint --verbose %<CR>
 " auto-reload vim diff on buffer write
 autocmd BufWritePost * if &diff == 1 | diffupdate | endif
+
+" allow project-specific .vimrc
+set exrc
+set secure
