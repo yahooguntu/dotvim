@@ -2,6 +2,13 @@ set nocompatible
 
 set ttimeoutlen=50
 
+" use regex engine 1
+" see:
+"       https://github.com/vim/vim/issues/282
+"       https://github.com/vim-ruby/vim-ruby/issues/243
+"       https://github.com/vim/vim/issues/1735
+set re=1
+
 " load pathogen
 execute pathogen#infect()
 
