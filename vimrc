@@ -37,7 +37,7 @@ set wildmenu
 set hidden
 
 " terminal title
-set title
+silent !echo -e "\033];${PWD\#\#*/}\007"
 
 set history=1000
 set undolevels=1000
