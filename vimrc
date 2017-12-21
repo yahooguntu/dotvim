@@ -155,13 +155,18 @@ nnoremap <silent><leader>] :bn<CR>
 " enable vim-airline buffer bar
 let g:airline#extensions#tabline#enabled = 1
 
-" ruby syntax check
+"
+" Syntax Checks
+"
 autocmd FileType ruby nnoremap <silent><localleader>s :! ruby -cw %<CR>
-" js syntax check
 autocmd FileType javascript nnoremap <silent><localleader>s :! jshint --verbose %<CR>
+
 " auto-reload vim diff on buffer write
 autocmd BufWritePost * if &diff == 1 | diffupdate | endif
 
 " allow project-specific .vimrc
 set exrc
 set secure
+
+" set tf syntax to python
+au BufRead,BufNewFile *.tf set filetype=python
