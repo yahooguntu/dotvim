@@ -170,3 +170,4 @@ set secure
 
 " set tf syntax to python
 au BufRead,BufNewFile *.tf set filetype=python
+set tags=tags

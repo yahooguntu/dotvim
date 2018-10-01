@@ -1,0 +1,26 @@
+[user]
+	name = Mitch Birti
+	email = mitch@birti.net
+	st = status
+	ci = commit
+[color]
+	ui = true
+[push]
+	default = upstream
+[http]
+	sslVerify = true
+[alias]
+	praise = blame
+	ci = commit
+	co = checkout
+	br = branch
+        df = diff
+        lg = log -p
+[mergetool]
+	keepBackup = false
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
+[init]
+	templatedir = ~/.git_template
