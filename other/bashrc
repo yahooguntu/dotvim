@@ -1,0 +1,11 @@
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+alias ll="ls -l -G"
+alias ls="ls -G"
+alias lynx='lynx -cfg=~/.lynx-config'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+ctags=/usr/local/bin/ctags

@@ -1,0 +1,148 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="gentoo"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+#plugins=(git git-flow rails ruby rvm brew cp gem)
+plugins=(git git-flow rails ruby cp docker)
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# jruby stuff
+export JRUBY_OPTS="-J-XX:+UseCompressedOops -J-XX:-TieredCompilation -J-Xms1750m -J-Xmx3000m -J-XX:MaxMetaspaceSize=256m -J-XX:ReservedCodeCacheSize=128m -J-XX:InitialCodeCacheSize=64m -J-Djava.net.preferIPv4Stack=true -J-XX:+UseConcMarkSweepGC -J-XX:+CMSParallelRemarkEnabled -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseParNewGC -J-XX:+CMSConcurrentMTEnabled -J-XX:ConcGCThreads=4 -Xcompile.mode=OFF -J-XX:NewSize=512m -J-XX:MaxNewSize=512m -J-XX:-UseAdaptiveSizePolicy -J-XX:MaxTenuringThreshold=2"
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# use vim keymap
+bindkey -v
+
+# set up numpad keys
+# 0 . Enter
+bindkey -s "^[Op" "0"
+bindkey -s "^[On" "."
+bindkey -s "^[OM" "^M"
+# 1 2 3
+bindkey -s "^[Oq" "1"
+bindkey -s "^[Or" "2"
+bindkey -s "^[Os" "3"
+# 4 5 6
+bindkey -s "^[Ot" "4"
+bindkey -s "^[Ou" "5"
+bindkey -s "^[Ov" "6"
+# 7 8 9
+bindkey -s "^[Ow" "7"
+bindkey -s "^[Ox" "8"
+bindkey -s "^[Oy" "9"
+# + - *
+bindkey -s "^[Ok" "+"
+bindkey -s "^[Om" "-"
+bindkey -s "^[Oj" "*"
+# / =
+bindkey -s "^[Oo" "/"
+bindkey -s "^[OX" "="
+
+# some misc keys
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
+bindkey "^[[3~" delete-char
+
+# set up full line search for up/down arrow keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+
+nop () { }
+zle -N nop
+bindkey -M vicmd '\e' nop
+
+# Github API tokens
+export HOMEBREW_GITHUB_API_TOKEN=f77deb7835310414d52ac03304c4d78b2d30e93d
+
+# Remember Erlang shell history
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
+export PATH="$PATH:/usr/local/opt/qt@5.5/bin"
+export PATH="$PATH:/Users/mitchb/Library/Android/sdk/platform-tools"
+export PATH="$PATH:/Users/mitchb/bin"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$HOME/.yarn/bin:$PATH"
