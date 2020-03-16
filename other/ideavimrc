@@ -1,0 +1,23 @@
+set visualbell
+set noerrorbells
+
+let mapleader = " "
+
+set clipboard=unnamedplus,unnamed
+set relativenumber
+set number
+
+set incsearch
+set hlsearch
+
+set ideajoin
+
+" map key to unhighlight all results
+nnoremap <leader>n :nohlsearch<CR>
+
+" use 'Q' to apply the macro 'q'
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+
+" close active tab
+nmap <leader>q :action CloseContent<cr>
