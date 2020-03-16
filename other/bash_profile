@@ -1,6 +1,9 @@
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
+export PATH="$PATH:/Users/yahooguntu/bin:/Users/yahooguntu/Library/Python/2.7/bin"
+export JAVA_HOME=`/usr/libexec/java_home`
+
 source "$HOME/.bashrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -15,13 +15,23 @@ execute pathogen#infect()
 " syntax highlighting
 syntax on
 colorscheme vividchalk
+set clipboard=unnamed
 
-" indenting for ruby
 set autoindent
 set nosmartindent
+
+" indenting for ruby
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" indenting for java
+"set noexpandtab
+"set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
+
+" always display status line
 set laststatus=2
 
 " allow backspacing over indent, lines, and start of insert
@@ -85,7 +95,7 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 "let g:nerdtree_tabs_open_on_console_startup=1
 
 
-" alias bbye to \q
+" alias Bdelete to \q
 nnoremap <leader>q :Bdelete<CR>
 
 " window navigation shortcuts
@@ -109,7 +119,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " autocomplete remap to ctrl-space
 inoremap <c-@> <c-x><c-o>
 
-" map :,r to autofill :e with the current path prefix
+" map :,e to autofill :e with the current path prefix
 cnoremap ,e e <c-r>=expand("%:h")<cr>/
 
 " use 'Q' to apply the macro 'q'
@@ -144,7 +154,7 @@ endfunc
 
 nnoremap <silent><leader>r :call CheckTimestampForReload()<cr>
 
-" ag shortcut for next/prev
+" quickfix shortcut for next/prev
 nnoremap <C-n> :cn<CR>
 nnoremap <C-p> :cp<CR>
 
@@ -171,3 +181,5 @@ set secure
 " set tf syntax to python
 au BufRead,BufNewFile *.tf set filetype=python
 set tags=tags
+
+let @c = '/\/wvEyggp0ve~A '

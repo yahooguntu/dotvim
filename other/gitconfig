@@ -1,6 +1,6 @@
 [user]
-	name = Mitch Birti
-	email = mitch@birti.net
+	name = Mitch B
+	email = yahooguntu@gmail.com
 	st = status
 	ci = commit
 [color]
@@ -22,5 +22,7 @@
 	tool = vimdiff
 [core]
 	editor = vim
+	autocrlf = input
+	pager = less -x1,5
 [init]
 	templatedir = ~/.git_template

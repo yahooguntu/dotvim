@@ -1,0 +1,8 @@
+DefaultKeyBinding.dict:
+  Put in ~/Library/KeyBindings to enable [Shift]{Home,End} for moving to start/end of lines.
+karabiner.json:
+  Karabiner-Elements config file. Put in ~/.config/karabiner/
+private.xml:
+  Old Karabiner config file
+com.googlecode.iterm2.plist
+  iTerm2 config file. Put in ~/Library/Preferences/
