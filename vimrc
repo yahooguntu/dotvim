@@ -9,6 +9,8 @@ set ttimeoutlen=50
 "       https://github.com/vim/vim/issues/1735
 set re=1
 
+filetype plugin on
+
 " load pathogen
 execute pathogen#infect()
 
