@@ -16,6 +16,7 @@ execute pathogen#infect()
 
 " syntax highlighting
 syntax on
+set background=dark
 colorscheme vividchalk
 set clipboard=unnamed
 
@@ -23,15 +24,16 @@ set autoindent
 set nosmartindent
 
 " indenting for ruby
-set expandtab
-set shiftwidth=2
-set softtabstop=2
+autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
 
 " indenting for java
-"set noexpandtab
-"set tabstop=4
-"set shiftwidth=4
-"set softtabstop=4
+autocmd FileType java setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+" indenting for java
+autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" indenting for yaml
+autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 
 " always display status line
 set laststatus=2
@@ -184,4 +186,10 @@ set secure
 au BufRead,BufNewFile *.tf set filetype=python
 set tags=tags
 
-let @c = '/\/wvEyggp0ve~A '
+" let @c = '/\/wvEyggp0ve~A '
+
+set runtimepath+=~/programs/LanguageClient-neovim
+
+"let g:LanguageClient_serverCommands = {
+"  \ 'cpp': ['clangd'],
+"  \ }
