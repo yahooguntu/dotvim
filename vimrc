@@ -2,17 +2,38 @@ set nocompatible
 
 set ttimeoutlen=50
 
-" use regex engine 1
-" see:
-"       https://github.com/vim/vim/issues/282
-"       https://github.com/vim-ruby/vim-ruby/issues/243
-"       https://github.com/vim/vim/issues/1735
-set re=1
-
 filetype plugin on
 
-" load pathogen
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+" ag searching
+Plug 'rking/ag.vim'
+
+" theme
+Plug 'tpope/vim-vividchalk'
+
+" support increment/decrement for dates
+Plug 'tpope/vim-speeddating'
+
+" file tree browser
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" nice status line
+Plug 'vim-airline/vim-airline'
+
+" git integration (mostly for airline)
+Plug 'tpope/vim-fugitive'
+
+" ruby support
+Plug 'vim-ruby/vim-ruby'
+
+" nicer buffer delete (:Bdelete)
+Plug 'moll/vim-bbye'
+
+call plug#end()
+
+" airline config
+let g:airline_powerline_fonts = 1
 
 " syntax highlighting
 syntax on
@@ -23,16 +44,10 @@ set clipboard=unnamed
 set autoindent
 set nosmartindent
 
-" indenting for ruby
+" indenting rules
 autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
-
-" indenting for java
 autocmd FileType java setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-" indenting for java
 autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-
-" indenting for yaml
 autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 
 " always display status line
@@ -72,6 +87,11 @@ set incsearch
 " highlight search results
 set hlsearch
 
+" use ag for search
+"if executable('ag')
+"  let g:ackprg = 'ag --vimgrep'
+"endif
+
 " use space as leader
 nnoremap <SPACE> <Nop>
 map <SPACE> <leader>
@@ -79,13 +99,20 @@ map <SPACE> <leader>
 " map key to unhighlight all results
 nnoremap <leader>n :nohlsearch<CR>
 
+" map :,e to autofill :e with the current path prefix
+cnoremap ,e e <c-r>=expand("%:h")<cr>/
+
+" use 'Q' to apply the macro 'q'
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+
 " linux xterm color support
-if $TERM == 'xterm'
+if $TERM == 'xterm-256color'
   set t_Co=256
 endif
 
 " nerdtree configs
-let NERDTreeIgnore = ['\.wixobj$', '\.pyc$']
+"let NERDTreeIgnore = ['\.wixobj$', '\.pyc$']
 
 " NERDTreeToggle leader mapping
 nnoremap <leader>f :NERDTreeToggle<CR>
@@ -121,25 +148,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " autocomplete remap to ctrl-space
-inoremap <c-@> <c-x><c-o>
-
-" map :,e to autofill :e with the current path prefix
-cnoremap ,e e <c-r>=expand("%:h")<cr>/
-
-" use 'Q' to apply the macro 'q'
-nnoremap Q @q
-vnoremap Q :norm @q<cr>
-
-" toggle between absolute and relative line numbers
-function! NumberToggle()
-  if (&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <silent><leader>N :call NumberToggle()<cr>
+"inoremap <c-@> <c-x><c-o>
 
 " show relative line numbers
 set relativenumber
@@ -167,7 +176,7 @@ nnoremap <silent><leader>[ :bp<CR>
 nnoremap <silent><leader>] :bn<CR>
 
 " enable vim-airline buffer bar
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 "
 " Syntax Checks
@@ -184,12 +193,5 @@ set secure
 
 " set tf syntax to python
 au BufRead,BufNewFile *.tf set filetype=python
+
 set tags=tags
-
-" let @c = '/\/wvEyggp0ve~A '
-
-set runtimepath+=~/programs/LanguageClient-neovim
-
-"let g:LanguageClient_serverCommands = {
-"  \ 'cpp': ['clangd'],
-"  \ }
