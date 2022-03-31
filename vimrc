@@ -49,10 +49,12 @@ set autoindent
 set nosmartindent
 
 " indenting rules
+set shiftwidth=0
 autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd FileType java setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType java setlocal noexpandtab tabstop=4 softtabstop=4
 autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType awk setlocal noexpandtab tabstop=4
 
 " always display status line
 set laststatus=2
@@ -116,10 +118,10 @@ if $TERM == 'xterm-256color'
 endif
 
 " nerdtree configs
-"let NERDTreeIgnore = ['\.wixobj$', '\.pyc$']
+let NERDTreeIgnore = ['\~$', '\.o$[[file]]']
 
 " NERDTreeToggle leader mapping
-nnoremap <leader>f :NERDTreeToggle<CR>
+" nnoremap <leader>f :NERDTreeToggle<CR>
 
 " close vim if last tab is nerdtree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -284,8 +286,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
