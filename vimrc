@@ -32,6 +32,10 @@ Plug 'moll/vim-bbye'
 
 " ccls integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+" CSV support
+Plug 'mechatroner/rainbow_csv'
 
 call plug#end()
 
@@ -52,7 +56,9 @@ set nosmartindent
 set shiftwidth=0
 autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType java setlocal noexpandtab tabstop=4 softtabstop=4
+autocmd FileType json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cmake setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType awk setlocal noexpandtab tabstop=4
 
