@@ -137,9 +137,7 @@ let NERDTreeIgnore = ['\~$', '\.o$[[file]]']
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "let g:nerdtree_tabs_open_on_console_startup=1
 
-
-" alias Bdelete to \q
-nnoremap <leader>q :Bdelete<CR>
+nnoremap <leader>bd :Bdelete<CR>
 
 " window navigation shortcuts
 map <C-h> <C-w>h
